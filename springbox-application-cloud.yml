@@ -30,5 +30,5 @@ security:
       client-id: springbox
       client-secret: springrocks
     resource:
-      user-info-uri: ${auth.sever}/uaa/user
-      token-info-uri: ${auth.sever}/uaa/oauth/check_token          
+      user-info-uri: ${auth.sever}/user
+      token-info-uri: ${auth.sever}/oauth/check_token          
