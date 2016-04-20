@@ -7,4 +7,28 @@ hystrix:
     default:
       execution:
         timeout:
-          enabled: false   
+          enabled: false
+
+auth.sever: http://springbox-auth-server.pcf10.cloud.fe.pivotal.io/uaa
+
+zuul:
+  routes:
+    springbox-catalog: /catalog/**
+    springbox-ratings: /ratings/**
+    springbox-recommendations: /recommendations/**
+    user:
+      path: /user/**
+      url: ${auth.sever}/user
+
+security:
+  user:
+    password: none
+  oauth2:
+    client:
+      access-token-uri: ${auth.sever}/oauth/token
+      userAuthorizationUri: ${auth.sever}/oauth/authorize
+      client-id: springbox
+      client-secret: springrocks
+    resource:
+      user-info-uri: ${auth.sever}/uaa/user
+      token-info-uri: ${auth.sever}/uaa/oauth/check_token          
