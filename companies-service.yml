@@ -1,0 +1,8 @@
+companies:
+  fetch:
+    size: 5
+spring:
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: create-drop
