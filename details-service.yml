@@ -1,0 +1,3 @@
+details:
+  quotesService: http://quotes-service
+  companiesService: http://companies-service
